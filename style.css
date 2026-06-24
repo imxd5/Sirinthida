@@ -1,0 +1,155 @@
+body{
+    margin: 0;
+    background-image: url(./download.jpg);
+    background-size: cover;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #222;
+}
+
+.card{
+    width: 100%;
+    max-width: 520px;
+    margin: 120px auto 20px auto;
+    left: auto;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.box{
+    width: 100%;
+    margin: auto;
+    max-width: 520px;
+    min-height: 640px;
+    position: relative;
+}
+
+.form-snip{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 70px 40px 40px 40px;
+    background: #ffffff;
+    color: #222222;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Responsive: smaller screens */
+@media (max-width: 600px){
+    .card{
+        max-width: 420px;
+        margin: 60px auto 20px;
+        border-radius: 16px;
+    }
+    .box{
+        min-height: auto;
+    }
+    .form-snip{
+        position: relative;
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+    .user-form input,
+    .user-form button{
+        font-size: 15px;
+        padding: 12px 14px;
+    }
+    .form-snip .tab{
+        font-size: 20px;
+    }
+}
+
+.form-snip .sign-in,
+.form-snip .sign-up{
+    display: none;
+}
+
+.form-snip .tab{
+    font-size: 24px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.form-snip .sign-in:checked+.tab,
+.form-snip .sign-up:checked+.tab{
+    color: #03264a; /* darker blue when selected */
+    font-weight: 700;
+}
+
+.user-form{
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}  
+
+.user-form input,
+.user-form button{
+    width: 100%;
+    display:block;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.user-form input{
+    color: #01203a; /* darker input text */
+    background: #d3eeff; /* slightly stronger light-blue */
+    border: 1px solid rgba(7,94,215,0.12);
+}
+
+.user-form label{
+    width: 100%;
+    display: block;
+    color: #064e9b; /* stronger blue */
+    font-size: 13px;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+/* Improve visibility specifically for the sign-up form labels */
+.form-snip .sign-up-form label{
+    color: #064e9b;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 14px;
+    opacity: 1;
+}
+
+::placeholder{
+    color: rgba(6,78,155,0.75);
+}
+
+.user-form button{
+    color: #fff;
+    font-weight: 600;
+    background: #0d6efd; /* bootstrap primary */
+    box-shadow: 0 4px 10px rgba(13,110,253,0.15);
+}
+
+.form-snip .tab{
+    color: #064e9b;
+}
+
+.form-snip .login-form,
+.form-snip .sign-up-form{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
+
+.form-snip .sign-in:checked+.tab+.sign-up+.tab+.user-form .login-form{
+    transform: rotate(0);
+}
+
+.form-snip .sign-up:checked+.tab+.user-form .sign-up-form{
+    transform: rotate(0);
+}
