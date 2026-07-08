@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./public/style.css">
 </head>
 <body>
     <div class="container">
@@ -130,7 +130,7 @@
 
             localStorage.setItem('currentUser', JSON.stringify({ Username: user.Username, Email: user.Email }));
             alert("เข้าสู่ระบบสำเร็จ!");
-            window.location.href = '/page.html';
+            window.location.href = './public/page.html';
         }
     </script>
 </body>
